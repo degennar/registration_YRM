@@ -4,7 +4,8 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body class="container">
-    <form id="form" name="form" method="post" action="https://payonline.epfl.ch/cgi-bin/commande" enctype="multipart/form-data">
+    <form id="form" name="form" method="post" action="https://payonline.epfl.ch/cgi-bin/commande" enctype="multipart/form-data" onsubmit="return checkPassword(this);">
+        <script src="passwd-check.js"></script>
         <img class="logo" src="images/logo.png" alt="YRM logo">
         <div class="form">
             <h1>Payment form</h1>
@@ -292,6 +293,10 @@
 
             <div class="textbox">
                 <input type="text" placeholder="Email Address" name="Email" id="Email" required>
+            </div>
+
+            <div class="textbox">
+                <input type="password" placeholder="Password" name="Password" id="Password">
             </div>
 
             <input name="Currency" type="hidden" id="Currency" value="EUR">
